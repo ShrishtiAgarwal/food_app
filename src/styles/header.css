@@ -96,7 +96,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.425);
     z-index: 99;
-    display: none;
+    /* display: none; */
   }
 
   .menu {
@@ -105,11 +105,13 @@
     right: 0;
     width: 250px;
     height: 100%;
-    background: #fff;
+     /* background: #fff; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     line-height: 20px;
+    z-index:100 ;
+    display: none;
   }
 
   .menu a {
@@ -122,8 +124,10 @@
 
   .cart__icon i,
   .user i,
-  .mobile__menu i {
+  .mobile__menu i,
+   .cart__badge i{
     font-size: 1rem;
+    display: none;
   }
 
   .show__menu {
