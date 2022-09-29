@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
-import './../../styles/header.css';
+import "./../../styles/header.css";
 
-const header = () => {
-  const nav_links = [
-    {
-      display: "Home",
-      path: "/home",
-    },
-    {
-      display: "Food",
-      path: "/foods",
-    },
-    {
-      display: "Cart",
-      path: "/cart",
-    },
-    {
-      display: "Contact",
-      path: "/contact",
-    },
-  ];
+const nav_links = [
+  {
+    display: "Home",
+    path: "/home",
+  },
+  {
+    display: "Food",
+    path: "/foods",
+  },
+  {
+    display: "Cart",
+    path: "/cart",
+  },
+  {
+    display: "Contact",
+    path: "/contact",
+  },
+];
+
+const Header = () => {
+  debugger
+  const menuRef = useRef(null);
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+  console.log(menuRef.current)
+
   return (
     <header className="header">
       <Container>
@@ -34,11 +40,15 @@ const header = () => {
           </div>
 
           {/*======== menu ==========*/}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef}>
             <div className="menu d-flex gap-5 align-items-center">
               {nav_links.map((item, index) => (
-                <NavLink to={item.path} key={index}
-                className={navClass => navClass.isActive && "active__menu" }>
+                <NavLink
+                  onClick={toggleMenu}
+                  to={item.path}
+                  key={index}
+                  className={(navClass) => navClass.isActive && "active__menu"}
+                >
                   {item.display}
                 </NavLink>
               ))}
@@ -56,7 +66,7 @@ const header = () => {
                 <i class="ri-user-line"></i>
               </Link>
             </span>
-            <span className="mobile__menu">
+            <span className="mobile__menu" onClick={toggleMenu}>
               <i class="ri-menu-line"></i>
             </span>
           </div>
@@ -66,4 +76,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;
