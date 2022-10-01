@@ -4,7 +4,6 @@ import { Row, Col, Container } from "reactstrap";
 import heroImg from "../assets/images/hero.png";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
-import AllFood from "./AllFood";
 
 const Home = () => {
   return (
