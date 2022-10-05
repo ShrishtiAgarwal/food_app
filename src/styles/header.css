@@ -78,7 +78,7 @@
   z-index: 99999;
   box-shadow: 5px 5px 15px -5px #fde4e4;
 }
-
+/* 
 @media only screen and (max-width: 992px) {
   .logo img {
     width: calc(100% - 70%);
@@ -97,15 +97,14 @@
     background: rgba(0, 0, 0, 0.425);
     z-index: 99;
     /* display: none; */
-  }
+  /* } */
 
-  .menu {
+  /* .menu {
     position: absolute;
     top: 0;
     right: 0;
     width: 250px;
     height: 100%;
-     /* background: #fff; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -148,4 +147,4 @@
   .logo h5 {
     margin-top: -55px;
   }
-}
+} */ 
