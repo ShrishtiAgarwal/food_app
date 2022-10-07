@@ -5,14 +5,44 @@ import heroImg from "../assets/images/hero.png";
 import "../styles/home.css";
 import { Link } from "react-router-dom";
 import Category from "../components/UI/Category";
+import products from "../assets/fake-data/products";
+import Product from "../components/UI/Product";
 
 import foodCategoryImg01 from "../assets/images/hamburger.png";
 import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
+import { useEffect } from "react";
 
 const Home = () => {
   const [category, setCategory] = useState("ALL");
+  const [allProducts, setAllProducts] = useState(products);
 
+  useEffect(() => {
+    let filteredProducts;
+
+    if (category === "ALL") {
+      filteredProducts = products;
+    }
+    if (category === "Burger") {
+      filteredProducts = products.filter(
+        (product) => product.category === "Burger"
+      );
+    }
+
+    if (category === "Pizza") {
+      filteredProducts = products.filter(
+        (product) => product.category === "Pizza"
+      );
+    }
+
+    if (category === "Bread") {
+      filteredProducts = products.filter(
+        (product) => product.category === "Bread"
+      );
+    }
+
+    setAllProducts(filteredProducts);
+  }, [category, allProducts, setAllProducts, setCategory]);
   return (
     <Helmet title="home">
       <section>
@@ -101,6 +131,11 @@ const Home = () => {
                 </button>
               </div>
             </Col>
+            {allProducts.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
+                <Product item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
