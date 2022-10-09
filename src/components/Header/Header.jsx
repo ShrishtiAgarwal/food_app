@@ -3,7 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import "./../../styles/header.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cartSliceUiActions } from "../../store/cartSliceUi";
 
 const nav_links = [
   {
@@ -27,8 +28,12 @@ const nav_links = [
 const Header = () => {
   const menuRef = useRef(null);
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
-  const totalQuantity = useSelector(state => state.cart.totalQuantity)
-  
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const dispatch = useDispatch();
+  const toggleCart = () => {
+    dispatch(cartSliceUiActions.toggleCartVisibility());
+  };
+
   return (
     <header className="header">
       <Container>
@@ -57,9 +62,11 @@ const Header = () => {
 
           {/* ======= nav right icons ===== */}
           <div className="nav__right menu d-flex gap-3 align-items-center">
-            <span className="cart__icon">
+            <span className="cart__icon" onClick={toggleCart}>
               <i class="ri-shopping-basket-line"></i>{" "}
-              <span className="cart__badge">{totalQuantity}</span>
+              <span className="cart__badge" >
+                {totalQuantity}
+              </span>
             </span>
             <span className="user">
               <Link to="/login">

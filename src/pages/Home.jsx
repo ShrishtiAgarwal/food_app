@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import testimonal from "../assets/images/network.png";
 import TestimonialSlider from "../components/UI/TestimonialSlider";
 
+
 const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
@@ -48,7 +49,7 @@ const Home = () => {
   return (
     <Helmet title="home">
       <section>
-        <Container style={{ "marginTop": "100px"}}>
+        <Container style={{ marginTop: "100px" }}>
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content">
@@ -68,24 +69,22 @@ const Home = () => {
                     <Link to={"./allFood"}>See all foods</Link>
                   </button>
                 </div>
-                
               </div>
               <div className=" hero__service  d-flex align-items-center gap-5 mt-5 ">
-                  <p className=" d-flex align-items-center gap-2 ">
-                    <span className="shipping__icon">
-                      <i class="ri-car-line"></i>
-                    </span>{" "}
-                    No shipping charge
-                  </p>
+                <p className=" d-flex align-items-center gap-2 ">
+                  <span className="shipping__icon">
+                    <i class="ri-car-line"></i>
+                  </span>{" "}
+                  No shipping charge
+                </p>
 
-                  <p className=" d-flex align-items-center gap-2 ">
-                    <span className="shipping__icon">
-                      <i class="ri-shield-check-line"></i>
-                    </span>{" "}
-                    100% secure checkout
-                  </p>
-                </div>
-
+                <p className=" d-flex align-items-center gap-2 ">
+                  <span className="shipping__icon">
+                    <i class="ri-shield-check-line"></i>
+                  </span>{" "}
+                  100% secure checkout
+                </p>
+              </div>
             </Col>
             <Col lg="6" md="6">
               <div className="hero__content">
@@ -161,7 +160,9 @@ const Home = () => {
               <div className="testimonial">
                 <h5>Testimonal</h5>
               </div>
-              <h6 className="testimonial_text">What our customers are saying</h6>
+              <h6 className="testimonial_text">
+                What our customers are saying
+              </h6>
               <div>
                 <TestimonialSlider />
               </div>
