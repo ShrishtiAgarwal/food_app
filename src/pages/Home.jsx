@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <Helmet title="home">
       <section>
-        <Container>
+        <Container style={{ "marginTop": "100px"}}>
           <Row>
             <Col lg="6" md="6">
               <div className="hero__content">
