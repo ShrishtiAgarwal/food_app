@@ -12,7 +12,7 @@ const TestimonialSlider = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     swipeToSlide: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
