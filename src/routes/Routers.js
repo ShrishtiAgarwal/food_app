@@ -7,7 +7,8 @@ import AllFood from '../pages/AllFood';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Checkout from '../pages/Checkout';
-import Contact from '../pages/Contact'
+import Contact from '../pages/Contact';
+import FoodDetails from '../pages/FoodDetails';
 
 
 const Routers = () => {
@@ -16,7 +17,8 @@ const Routers = () => {
             <Route path='/' element={<Navigate to='/home'/>}/>
             <Route path='/home' element={<Home/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='/allFood' element={<AllFood/>}/>
+            <Route path='/foods' element={<AllFood/>}/>
+            <Route path="/foods/:id" element={<FoodDetails />} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
             <Route path='/checkout' element={<Checkout/>}/>

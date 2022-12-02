@@ -8,14 +8,18 @@ const Product = (props) => {
   const { id, title, price, image01 } = props.item;
   const dispatch = useDispatch();
   const addToCart = () => {
-    dispatch(
-      cartActions.addItem({
-        id,
-        title,
-        price,
-        image01,
-      })
-    );
+    console.log(window.analytics)
+    window.analytics.track('testing', {
+      "fda" : "fvrsf"
+  })
+    // dispatch(
+    //   cartActions.addItem({
+    //     id,
+    //     title,
+    //     price,
+    //     image01,
+    //   })
+    // );
   };
 
   return (

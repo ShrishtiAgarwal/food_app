@@ -66,7 +66,7 @@ const Home = () => {
                 </div>
                 <div className="all__food">
                   <button className="all__food__button">
-                    <Link to={"./allFood"}>See all foods</Link>
+                    <Link to={"./foods"}>See all foods</Link>
                   </button>
                 </div>
               </div>

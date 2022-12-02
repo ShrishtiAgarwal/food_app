@@ -13,7 +13,7 @@ const nav_links = [
   },
   {
     display: "Food",
-    path: "/allFood",
+    path: "/foods",
   },
   {
     display: "Cart",

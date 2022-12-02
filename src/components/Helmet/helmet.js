@@ -1,6 +1,6 @@
 import React from "react";
 
-const helmet = (props) => {
+const Helmet = (props) => {
     document.title = "Food ordering app -" + props.title;
 
   return (
@@ -8,4 +8,4 @@ const helmet = (props) => {
   );
 };
 
-export default helmet;
+export default Helmet;
